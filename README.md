@@ -25,3 +25,53 @@ mengelola data mata kuliah yang ditawarkan oleh perguruan tinggi, seperti menamb
 
 **Login dan Autentikasi Pengguna**
 Aplikasi ini dilengkapi dengan sistem login dan autentikasi untuk memastikan bahwa hanya pengguna yang berwenang yang dapat mengakses dan mengelola data akademik.
+
+**Cara Pemakaian Aplikasi**
+Berikut adalah langkah-langkah dalam menggunakan aplikasi MSIA:
+
+**Login ke Sistem**
+Buka aplikasi melalui browser web.
+Masukkan username dan password yang telah diberikan ke dalam form login.
+Klik tombol "Login" untuk masuk ke dalam sistem.
+
+**Mengakses Dashboard**
+Setelah berhasil login, Anda akan diarahkan ke halaman dashboard yang menampilkan ringkasan informasi akademik. Di sini, Anda dapat melihat informasi singkat mengenai data dosen, mahasiswa, kelas, dan mata kuliah.
+
+**Mengelola Data Dosen**
+Pilih menu "Data Dosen" dari navigasi.
+Anda dapat melihat daftar dosen yang sudah terdaftar.
+Untuk menambah dosen baru, klik tombol "Tambah Dosen", isi form yang tersedia, lalu klik "Simpan".
+Untuk mengedit data dosen, klik ikon "Edit" pada daftar dosen yang ingin diubah, lakukan perubahan, dan simpan.
+Untuk menghapus dosen, klik ikon "Hapus" pada daftar dosen yang diinginkan.
+
+**Mengelola Data Mahasiswa**
+Pilih menu "Data Mahasiswa".
+Anda dapat melihat daftar mahasiswa yang sudah terdaftar.
+Untuk menambah mahasiswa baru, klik tombol "Tambah Mahasiswa", isi form yang tersedia, lalu klik "Simpan".
+Untuk mengedit data mahasiswa, klik ikon "Edit" pada daftar mahasiswa yang ingin diubah, lakukan perubahan, dan simpan.
+Untuk menghapus mahasiswa, klik ikon "Hapus" pada daftar mahasiswa yang diinginkan.
+
+**Mengelola Data Jurusan**
+Pilih menu "Data Jurusan".
+Anda dapat melihat daftar jurusan yang sudah terdaftar.
+Untuk menambah jurusan baru, klik tombol "Tambah Jurusan", isi form yang tersedia, lalu klik "Simpan".
+Untuk mengedit data jurusan, klik ikon "Edit" pada daftar jurusan yang ingin diubah, lakukan perubahan, dan simpan.
+Untuk menghapus jurusan, klik ikon "Hapus" pada daftar jurusan yang diinginkan.
+
+**Mengelola Data Kelas**
+Pilih menu "Data Kelas".
+Anda dapat melihat daftar kelas yang sudah terdaftar.
+Untuk menambah kelas baru, klik tombol "Tambah Kelas", isi form yang tersedia, lalu klik "Simpan".
+Untuk mengedit data kelas, klik ikon "Edit" pada daftar kelas yang ingin diubah, lakukan perubahan, dan simpan.
+Untuk menghapus kelas, klik ikon "Hapus" pada daftar kelas yang diinginkan.
+
+**Mengelola Data Mata Kuliah**
+Pilih menu "Data Mata Kuliah".
+Anda dapat melihat daftar mata kuliah yang sudah terdaftar.
+Untuk menambah mata kuliah baru, klik tombol "Tambah Mata Kuliah", isi form yang tersedia, lalu klik "Simpan".
+Untuk mengedit data mata kuliah, klik ikon "Edit" pada daftar mata kuliah yang ingin diubah, lakukan perubahan, dan simpan.
+Untuk menghapus mata kuliah, klik ikon "Hapus" pada daftar mata kuliah yang diinginkan.
+
+**Logout dari Sistem**
+Setelah selesai menggunakan aplikasi, pastikan untuk logout dengan mengklik ikon "Logout" agar sesi Anda tidak disalahgunakan oleh pihak lain.
+
