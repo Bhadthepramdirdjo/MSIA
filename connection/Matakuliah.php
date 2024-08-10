@@ -1,5 +1,8 @@
 
 <?php
+// Bhadriko Theo Pramudya
+// 10123375
+// IF9
 require_once 'koneksi.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
