@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- Bhadriko Theo pramudya -->
+<!-- 10123375 -->
+<!-- IF9 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Jurusan</title>
+    <!-- Revana Yusuf Maulid
+         10123355
+         IF9 --> 
+    <link rel="icon" type="image/png" href="../../image/MSIAicon.png" />
+    <link rel="stylesheet" href="../../css/TambahJurusan.css">
+    <link rel="stylesheet" href="../../css/Dashboard.css">
+    <script src="../../Function/Jurusan.js" defer></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>
+            <img src="../../image/MSIAicon.png" alt="MSIA" style="width: 160px; height: auto;">
+        </h2>
+        <ul>
+            <li><a href="../Dashboard.html">
+                <img src="../../image/BerandaLogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="toggleDropdown(event)"><img src="../../image/settingsBodas.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                    Atur Data</a>
+                <div class="dropdown-content">
+                    <a href="TambahKelas.html">Atur Data Kelas</a>
+                    <a href="TambahMahasiswa.html">Atur Data Mahasiswa</a>
+                    <a href="TambahMatakuliah.html">Atur Data Matakuliah</a>
+                    <a href="TambahDosen.html">Atur Data Dosen</a>
+                    <a href="TambahJurusan.html">Atur Data Jurusan</a>
+                </div>
+            </li>
+            <!--Frendly Great Cornelius-->
+            <!-- 10123381-->
+            <!-- IF9 -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="toggleDropdown(event)">
+                    <img src="../../image/open-folder.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                    Lihat Data</a>
+                <div class="dropdown-content">
+                    <a href="../DataKelas.html">                    
+                        <img src="../../image/settingsBodas.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Kelas</a>
+                    <a href="../DataDosen.html">
+                        <img src="../../image/dosenlogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Dosen</a>
+                    <a href="../DataMahasiswa.html">
+                        <img src="../../image/mahasiswalogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Mahasiswa</a>
+                    <a href="../DataJurusan.html">
+                        <img src="../../image/jurusan.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Jurusan</a>
+                    <a href="../DataMatakuliah.html">
+                        <img src="../../image/MatakuliahLogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Matakuliah</a>
+                </div>
+            </li>
+            <li><a href="../index.html">
+                <img src="../../image/logout.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                Keluar</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="container">
+            <h1>Tambah Jurusan</h1>
+            <form id="jurusanForm">
+                <div class="form-group">
+                    <label for="namaJurusan" style="text-align: left;">Nama Jurusan</label>
+                    <input type="text" id="namaJurusan" name="namaJurusan" required>
+                </div>
+                <div class="form-group">
+                    <label for="kodeJurusan" style="text-align: left;">Kode Jurusan</label>
+                    <input type="text" id="kodeJurusan" name="kodeJurusan" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Tambah Jurusan</button>
+            </form>
+            <h2>Daftar Jurusan</h2>
+            <table class="jurusan-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Jurusan</th>
+                        <th>Kode Jurusan</th>
+                        <th class="aksi-column">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="jurusan-tbody">
+                    <!-- Baris tabel akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal konfirmasi hapus -->
+    <div id="confirmDeleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeConfirmDeleteModal()">&times;</span>
+            <h2>Konfirmasi Hapus</h2>
+            <p>Apakah Anda yakin ingin menghapus jurusan ini?</p>
+            <button id="confirmDeleteButton" class="btn btn-danger">Hapus</button>
+            <button onclick="closeConfirmDeleteModal()" class="btn btn-secondary">Batal</button>
+        </div>
+    </div>
+
+    <!-- Modal edit jurusan -->
+    <div id="editJurusanModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditJurusanModal()">&times;</span>
+            <h2>Edit Jurusan</h2>
+            <form id="editJurusanForm">
+                <div class="form-group">
+                    <label for="editNamaJurusan">Nama Jurusan</label>
+                    <input type="text" id="editNamaJurusan" name="editNamaJurusan" required>
+                </div>
+                <div class="form-group">
+                    <label for="editKodeJurusan">Kode Jurusan</label>
+                    <input type="text" id="editKodeJurusan" name="editKodeJurusan" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notifikasi -->
+    <div id="notification" class="notification"></div>
+
+    <script>
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.closest('li');
+            parentLi.classList.toggle('open');
+        }
+
+        function closeEditJurusanModal() {
+            document.getElementById('editJurusanModal').style.display = 'none';
+        }
+
+        function closeConfirmDeleteModal() {
+            document.getElementById('confirmDeleteModal').style.display = 'none';
+        }
+
+        function showNotification(message, isError = false) {
+            const notification = document.getElementById('notification');
+            notification.innerText = message;
+            notification.className = isError ? 'notification error show' : 'notification success show';
+            setTimeout(() => {
+                notification.classList.remove('show');
+                notification.style.visibility = 'hidden';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+</html>

@@ -1,0 +1,279 @@
+/* Frendly Great Cornelius
+    10123381
+    IF-9 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #02290a;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.wrapper{
+    position: relative;
+    width: 400px;
+    padding: 40px;  
+    background: rgba(0,0,0,.20);
+    box-shadow: 0 8px 32px rgba(18, 223, 86, 0.37);
+    border: 1px solid rgba(255,255,255,.100);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    text-align: center;      
+}
+
+form {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 15px;  
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%; 
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    color: #fff;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -3px; 
+    font-size: 0.75em; 
+}
+
+.input-box input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 50px;
+}
+
+
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(45deg, #34c759, #00e676);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00e676, #34c759);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(34, 175, 81, 0.7);
+}
+
+
+button ion-icon {
+    font-size: 1.2em;
+}
+
+.blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(180deg, rgba(0, 77, 13, 0.7) 31.77%, #00ff0d 100%);
+    border-radius: 17% 83% 35% 65% / 32% 34% 66% 68%;
+    transform: translate(-100px, -50px) rotate(-90deg);
+    transition: 1s cubic-bezier(.07, .8, .16, 1);
+    animation: animateBlob 20s infinite alternate ease-in-out;
+}
+
+.blob:hover {
+    width: 520px;
+    height: 520px;
+    filter: blur(30px);
+    box-shadow:
+        inset 0 0 0 5px rgba(255, 255, 255, 0.6),
+        inset 100px 100px 0 0 rgba(34, 175, 81, 0.8), 
+        inset 200px 200px 0 0 rgba(107, 142, 35, 0.8); 
+}
+
+@keyframes animateBlob{
+    0%{
+        transform: translate(-100px, -50px) rotate(-90deg);
+        border-radius: 17% 83% 35% 65% / 32% 34% 66% 68%;
+    }
+    25%{
+        transform: translate(100px, 150px) rotate(-60deg);
+        border-radius: 30% 70% 40% 60% / 45% 55% 60% 40%;
+    }
+    50%{
+        transform: translate(-150px, 200px) rotate(-30deg);
+        border-radius: 40% 60% 60% 40% / 35% 65% 55% 45%;
+    }
+    75%{
+        transform: translate(200px, -100px) rotate(0deg);
+        border-radius: 60% 40% 50% 50% / 55% 45% 65% 35%;
+    }
+    100%{
+        transform: translate(0, 0) rotate(30deg);
+        border-radius: 85% 15% 59% 41% / 44% 35% 65% 56%;
+    }
+}
+
+.toast__container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toast {
+    margin-bottom: 10px;
+}
+
+.toast__cell {
+    display: inline-block;
+}
+
+.add-margin {
+    margin-top: 20px;
+}
+
+.toast__svg {
+    fill: #fff;
+}
+
+.toast {
+    text-align: left;
+    padding: 21px 0;
+    background-color: #fff;
+    border-radius: 4px;
+    max-width: 500px;
+    top: 0px;
+    position: relative;
+    box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
+}
+
+.toast:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.toast__icon {
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    padding: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.toast__type {
+    color: #3e3e3e;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.toast__message {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #878787;
+}
+
+.toast__content {
+    padding-left: 70px;
+    padding-right: 60px;
+}
+
+.toast__close {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    width: 14px;
+    cursor: pointer;
+    height: 14px;
+    fill: #878787;
+    transform: translateY(-50%);
+}
+
+.toast--green .toast__icon {
+    background-color: #2BDE3F;
+}
+
+.toast--green:before {
+    background-color: #2BDE3F;
+}
+
+.toast--blue .toast__icon {
+    background-color: #1D72F3;
+}
+
+.toast--blue:before {
+    background-color: #1D72F3;
+}
+
+.toast--red.toast__icon {
+    background-color: #ff0707;
+}
+
+.toast--red:before {
+    background-color: #ff0707;
+}

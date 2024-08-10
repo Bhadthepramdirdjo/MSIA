@@ -1,0 +1,161 @@
+/* Bhadriko Theo Pramudya */
+/* 10123375 */
+/* IF9 */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: #fff;
+    margin: auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.616);
+    max-width: 850px;
+    margin-top: 30px;
+    text-align: center; 
+}
+
+.sidebar {
+    width: 200px;
+    background: linear-gradient(to right, #218838, #065618);
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    border-top-right-radius : 25px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    position: relative;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar ul li .dropdown-content {
+    display: block; 
+    background-color: #036c1a;
+    min-width: 200px;
+    z-index: 1;
+    border: solid black 1px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.sidebar ul li .dropdown-content a {
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li .dropdown-content a:hover {
+    background: linear-gradient(45deg, #00e676, #34c759);
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(34, 175, 81, 0.7);
+}
+
+.sidebar ul li.open .dropdown-content {
+    max-height: 500px; 
+    opacity: 1;
+}
+
+.sidebar ul li .dropbtn {
+    cursor: pointer;
+}
+
+
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.cards {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.card {
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 30%;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 24px;
+    margin: 0;
+}
+
+#pie-chart {
+    min-height: 250px;
+}
+
+#myPieChart {
+    max-width: 300px; 
+    margin: 0 auto; 
+}
+
+#chartCenterText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#chartLabel {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#chartValue {
+    font-size: 24px;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- Bhadriko Theo Pramudya -->
+<!-- 10123375 -->
+<!-- IF9 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Matakuliah</title>
+    <!-- Revana Yusuf Maulid
+         10123355
+         IF9 --> 
+    <link rel="icon" type="image/png" href="../../image/MSIAicon.png" />
+    <link rel="stylesheet" href="../../css/Dashboard.css">
+    <link rel="stylesheet" href="../../css/TambahMatakuliah.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>
+            <img src="../../image/MSIAicon.png" alt="MSIA" style="width: 160px; height: auto;">
+        </h2>
+        <ul>
+            <li><a href="../Dashboard.html">
+                <img src="../../image/BerandaLogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="toggleDropdown(event)"><img src="../../image/settingsBodas.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                    Atur Data</a>
+                <div class="dropdown-content">
+                    <a href="TambahKelas.html">Atur Data Kelas</a>
+                    <a href="TambahMahasiswa.html">Atur Data Mahasiswa</a>
+                    <a href="TambahMatakuliah.html">Atur Data Matakuliah</a>
+                    <a href="TambahDosen.html">Atur Data Dosen</a>
+                    <a href="TambahJurusan.html">Atur Data Jurusan</a>
+                </div>
+            </li>
+            <!--Frendly Great Cornelius-->
+            <!-- 10123381-->
+            <!-- IF9 -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="toggleDropdown(event)">
+                    <img src="../../image/open-folder.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                    Lihat Data</a>
+                <div class="dropdown-content">
+                    <a href="../DataKelas.html">                    
+                        <img src="../../image/settingsBodas.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Kelas</a>
+                    <a href="../DataDosen.html">
+                        <img src="../../image/dosenlogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Dosen</a>
+                    <a href="../DataMahasiswa.html">
+                        <img src="../../image/mahasiswalogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Mahasiswa</a>
+                    <a href="../DataJurusan.html">
+                        <img src="../../image/jurusan.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Jurusan</a>
+                    <a href="../DataMatakuliah.html">
+                        <img src="../../image/MatakuliahLogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Matakuliah</a>
+                </div>
+            </li>
+            <li><a href="../index.html">
+                <img src="../../image/logout.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                Keluar</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="container">
+            <h1>Tambah Matakuliah Baru</h1>
+            <form id="tambahMatakuliahForm">
+                <div class="form-group">
+                    <label for="namaMatakuliah">Nama Matakuliah:</label>
+                    <input type="text" id="namaMatakuliah" name="namaMatakuliah" required>
+                </div>
+                <div class="form-group">
+                    <label for="kodeMatakuliah">Kode Matakuliah:</label>
+                    <input type="text" id="kodeMatakuliah" name="kodeMatakuliah" required>
+                </div>
+                <div class="form-group">
+                    <label for="dosenPengampu">Dosen Pengampu:</label>
+                    <input type="text" id="dosenPengampu" name="dosenPengampu" readonly>
+                    <input type="text" id="searchDosenPengampu" placeholder="Cari Dosen">
+                    <div class="search-results">
+                        <table>
+                            <tbody id="search-results-tbody">
+                                <!-- Hasil pencarian dosen akan diisi oleh JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <button type="submit">Tambah Matakuliah</button>
+            </form>
+            <h2>Daftar Matakuliah</h2>
+            <table class="matakuliah-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Matakuliah</th>
+                        <th>Kode</th>
+                        <th>Dosen Pengampu</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="matakuliah-tbody">
+                    <!-- Baris tabel akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Modal untuk mengedit matakuliah -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edit Matakuliah</h2>
+            <form id="editMatakuliahForm">
+                <input type="hidden" id="editKodeMatakuliahLama" name="editKodeMatakuliahLama">
+                <div class="form-group">
+                    <label for="editNamaMatakuliah">Nama Matakuliah:</label>
+                    <input type="text" id="editNamaMatakuliah" name="editNamaMatakuliah" required>
+                </div>
+                <div class="form-group">
+                    <label for="editKodeMatakuliahBaru">Kode Matakuliah:</label>
+                    <input type="text" id="editKodeMatakuliahBaru" name="editKodeMatakuliahBaru" required>
+                </div>
+                <div class="form-group">
+                    <label for="editDosenPengampu">Dosen Pengampu:</label>
+                    <input type="text" id="editDosenPengampu" name="editDosenPengampu" readonly>
+                    <input type="text" id="searchEditDosenPengampu" placeholder="Cari Dosen">
+                    <div class="search-results">
+                        <table>
+                            <tbody id="edit-search-results-tbody">
+                                <!-- Hasil pencarian dosen akan diisi oleh JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>                  
+                <button type="submit">Simpan</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal konfirmasi hapus -->
+    <div id="confirmDeleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="window.closeConfirmDeleteModal()">&times;</span>
+            <h2>Konfirmasi Hapus</h2>
+            <p>Apakah Anda yakin ingin menghapus matakuliah ini?</p>
+            <button id="confirmDeleteButton" class="btn btn-danger">Hapus</button>
+            <button onclick="window.closeConfirmDeleteModal()" class="btn btn-secondary">Batal</button>
+        </div>
+    </div>
+    
+    <!-- Notifikasi -->
+    <div id="notification" class="notification"></div>
+    
+    <script src="../../Function/Matakuliah.js"></script>
+    <script>
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.closest('li');
+            parentLi.classList.toggle('open');
+        }
+
+        function closeModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        function closeConfirmDeleteModal() {
+            document.getElementById('confirmDeleteModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Bhadriko Theo Pramudya -->
+<!-- 10123375 -->
+<!-- IF9 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Jurusan</title>
+    <!-- Revana Yusuf Maulid
+         10123355
+         IF9 --> 
+    <link rel="icon" type="image/png" href="../image/MSIAicon.png" />
+    <link rel="stylesheet" href="../css/DataJurusan.css">
+    <link rel="stylesheet" href="../css/Dashboard.css">
+</head>
+<body>
+    <!-- Bhadriko Theo Pramudya -->
+    <!-- 10123375 -->
+    <!-- IF9 -->
+    <div class="sidebar">
+        <h2>
+            <img src="../image/MSIAicon.png" alt="MSIA" style="width: 200px; height: auto;">
+        </h2>
+        <ul>
+            <li><a href="Dashboard.html">
+                <img src="../image/BerandaLogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;padding: 10px 0;">
+                Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="toggleDropdown(event)">
+                    <img src="../image/settingsBodas.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                    Atur Data
+                </a>
+                <div class="dropdown-content">
+                    <a href="Tambah/TambahKelas.html">Atur Data Kelas</a>
+                    <a href="Tambah/TambahMahasiswa.html">Atur Data Mahasiswa</a>
+                    <a href="Tambah/TambahMatakuliah.html">Atur Data Matakuliah</a>
+                    <a href="Tambah/TambahDosen.html">Atur Data Dosen</a>
+                    <a href="Tambah/TambahJurusan.html">Atur Data Jurusan</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="toggleDropdown(event)">
+                    <img src="../image/open-folder.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                    Lihat Data
+                </a>
+                <div class="dropdown-content">
+                    <a href="DataKelas.html">
+                        <img src="../image/KLAZZZlogo.png" alt="Settings" style="width: 19px; height: 19px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Kelas
+                    </a>
+                    <a href="DataDosen.html">
+                        <img src="../image/dosenlogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Dosen
+                    </a>
+                    <a href="DataMahasiswa.html">
+                        <img src="../image/mahasiswalogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Mahasiswa
+                    </a>
+                    <a href="DataJurusan.html">
+                        <img src="../image/jurusan.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Jurusan
+                    </a>
+                    <a href="DataMatakuliah.html">
+                        <img src="../image/MatakuliahLogo.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                        Data Matakuliah
+                    </a>
+                </div>
+            </li>
+            <li><a href="../index.html">
+                <img src="../image/logout.png" alt="Settings" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; padding: 10px 0;">
+                Keluar</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="container">
+            <h1>
+                <img src="../image/2.png" alt="Settings" style="width: 70px; height: 70px; vertical-align: middle;">
+                Data Jurusan
+            </h1>
+            <table class="jurusan-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Jurusan</th>
+                        <th>Kode Jurusan</th>
+                    </tr>
+                </thead>
+                <tbody id="jurusanTbody">
+                    <!-- Baris tabel akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../Function/DataJurusan.js"></script>    <script>
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.closest('li');
+            parentLi.classList.toggle('open');
+        }
+
+        function fetchJurusanData() {
+        fetch('../connection/Jurusan.php')
+            .then(response => response.json())
+            .then(data => {
+
+                jurusanTbody.innerHTML = '';
+                data.forEach((jurusan, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${jurusan.NamaJurusan}</td>
+                        <td>${jurusan.KodeJurusan}</td>
+                    `;
+                    jurusanTbody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    fetchJurusanData();
+    </script>
+</body>
+</html>

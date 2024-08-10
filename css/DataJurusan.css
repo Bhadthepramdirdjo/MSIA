@@ -1,0 +1,54 @@
+/* Bhadriko Theo */
+/* 10123375 */
+/* IF9 */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #c0bfbf;
+    margin: 0;
+    display: flex;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+.jurusan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.jurusan-table th, .jurusan-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.jurusan-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.jurusan-table td {
+    background-color: #f9f9f9;
+}
+
+.jurusan-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.jurusan-table tr:hover {
+    background-color: #ddd;
+}
