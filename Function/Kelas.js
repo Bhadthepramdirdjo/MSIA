@@ -1,6 +1,6 @@
 // Bhadriko Theo pramudya
 // 10123375
-// I
+// IF9
 
 document.addEventListener('DOMContentLoaded', () => {
     const cardContainer = document.getElementById('kelasContainer');
