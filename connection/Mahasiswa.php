@@ -1,5 +1,8 @@
 
 <?php
+// Bhadriko Theo Pramudya
+// 10123375
+// IF9
 header('Content-Type: application/json');
 
 require 'koneksi.php';
