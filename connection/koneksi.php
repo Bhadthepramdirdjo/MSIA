@@ -1,5 +1,8 @@
 
 <?php
+// Bhadriko Theo Pramudya
+// 10123375
+// IF9
 $servername = "localhost"; 
 $username = "root"; 
 $password = ""; 
